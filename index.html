@@ -154,24 +154,7 @@
       <div id="layout-wrapper">
          <div id="stylezone">
          </div>
-         <div id="translate_wrapper">
-            <div id="translate">
-               <div class="zone zone-translate">
-                  <article class="widget-translate widget-html-widget widget">
-                     <div class="htmlwidget">
-                        <div class="html-widget-body"></div>
-                     </div>
-                  </article>
-                  <article class="widget-translate widget-layout-widget widget">
-                     <div class="layoutwidget">
-                        <div class="layout-widget-body">
-                           <div id="google_translate_element"></div>
-                        </div>
-                     </div>
-                  </article>
-               </div>
-            </div>
-         </div>
+
          <header class="navbar-wrapper">
             <div id="layout-header" class="group">
                <div id="header">
@@ -826,10 +809,7 @@
                                              </ul>
                                           </div>
                                           <div class=" col-md-4">
-                                             <figure>
-                                                <img src="/placehold.it/750X450" alt="" /> 
-                                                <figcaption>Caption</figcaption>
-                                             </figure>
+                                            
                                           </div>
                                        </div>
                                     </div>
@@ -1400,58 +1380,6 @@
          $('#Waste-wood').on('shown.bs.modal', function () {
            $('button[data-target="#Waste-wood"]').trigger('focus')
          })
-      </script>
-      <script type="text/javascript">
-         function googleTranslateElementInit() {
-             new google.translate.TranslateElement({ pageLanguage: 'en', gaTrack: true, gaId: 'UA-78280327-2' }, 'google_translate_element');
-         }
-      </script>
-      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-      <script src="/ssl.google-analytics.com/ga.js"></script>
-      <script>
-         $(window).on('load', function() {
-             $("a[href$='pdf']").each(function(index) {
-                 pdfLabel = $(this).attr('href');
-                 pdfOnClick = "ga('send', 'event', 'PDF', '" + pdfLabel + "');";
-                 $(this).attr("onClick", pdfOnClick);
-             });
-             $("a[href$='jpg']").each(function(index) {
-                 jpgLabel = $(this).attr('href');
-                 jpgOnClick = "ga('send', 'event', 'JPG', '" + jpgLabel + "');";
-                 $(this).attr("onClick", jpgOnClick);
-             });
-             $("a[href$='png']").each(function(index) {
-                 pngLabel = $(this).attr('href');
-                 pngOnClick = "ga('send', 'event', 'PNG', '" + pngLabel + "');";
-                 $(this).attr("onClick", pngOnClick);
-             });
-             $("form button[type='submit'], form input[type='submit'] ").each(function(index) {
-                 formLabel = $(this).closest('form').attr('data-formname');
-                 formOnSubmit = "ga('send', 'event', 'Form Submission', '" + formLabel + "');";
-                 $(this).attr("onmousedown", formOnSubmit);
-             });
-             $("[data-toggle='modal']").each(function(index) {
-                 modalLabel = $(this).attr('data-modal');
-                 modalOnClick = "ga('send', 'event', 'modal', 'click', '" + modalLabel + "');";
-                 $(this).attr("onmousedown", modalOnClick);
-             });
-         });
-         var scrolledBy = [];
-         var endOfPage = false;
-         $(document).scroll(function(){
-             var distanceFromBottom = Math.floor($(document).height() - $(document).scrollTop() - $(window).height());
-             if((distanceFromBottom === 0) && ( !endOfPage)){
-                 ga('send', 'event', 'section', 'end of page');
-                 endOfPage = true;
-             }
-             $("#content article.widget h1:first-of-type").each(function() {
-                 headingTitle = $(this).attr('id');
-                 if(($(window).scrollTop() >= $(this).offset().top) && (headingTitle) && (scrolledBy.indexOf(headingTitle) === -1)){
-                     ga('send', 'event', 'section', $(this)[0].innerText);
-                     scrolledBy.push(headingTitle);
-                 } 
-             }); 
-         });
       </script>
    </body>
 </html>
